@@ -16,4 +16,4 @@ export function escolhaACor(cor: Cores): void {
   console.log(Cores[cor]);
 }
 
-escolhaACor(123456);
+// escolhaACor(123456);
