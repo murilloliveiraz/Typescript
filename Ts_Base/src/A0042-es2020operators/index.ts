@@ -1,14 +1,14 @@
 // Encadeamento opcional e Operador de coalescência nula
 type Documento = {
-  titulo: string;
-  texto: string;
-  data?: Date;
+   titulo: string;
+   texto: string;
+   data?: Date;
 };
 
 const documento: Documento = {
-  titulo: 'O título',
-  texto: 'O texto',
-  // data: new Date(),
+   titulo: 'O título',
+   texto: 'O texto',
+   // data: new Date(),
 };
 
 console.log(documento.data?.toDateString() ?? '1-Ixi, não existe data.');

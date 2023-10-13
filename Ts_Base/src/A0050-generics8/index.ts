@@ -1,15 +1,15 @@
 // Record
 const objeto1: Record<string, string | number> = {
-  nome: 'Luiz',
-  sobrenome: 'Miranda',
-  idade: 30,
+   nome: 'Luiz',
+   sobrenome: 'Miranda',
+   idade: 30,
 };
 console.log(objeto1);
 
 type PessoaProtocol = {
-  nome?: string;
-  sobrenome?: string;
-  idade?: number;
+   nome?: string;
+   sobrenome?: string;
+   idade?: number;
 };
 
 // Required
@@ -22,10 +22,10 @@ type PessoaReadonly = Readonly<PessoaRequired>;
 type PessoaPick = Pick<PessoaRequired, 'nome' | 'sobrenome'>;
 
 const objeto2: PessoaRequired = {
-  nome: 'Luiz',
-  sobrenome: 'Miranda',
-  idade: 30,
-};
+   nome: 'Luiz',
+   sobrenome: 'Miranda',
+   idade: 30,
+}; 
 console.log(objeto2);
 
 // Extract e Exclude
@@ -36,26 +36,26 @@ type TipoExtract = Extract<ABC, CDE>;
 
 //
 type AccountMongo = {
-  _id: string;
-  nome: string;
-  idade: number;
-  sobrenome: string;
+   _id: string;
+   nome: string;
+   idade: number;
+   sobrenome: string;
 };
 
 type AccountApi = Pick<AccountMongo, Exclude<keyof AccountMongo, '_id'>> & {
-  id: string;
+   id: string;
 };
 
 const accountMongo: AccountMongo = {
-  _id: 'asfd9p8a7sdf90a8s76f9as',
-  nome: 'Luiz',
-  idade: 30,
-  sobrenome: 'Miranda',
+   _id: 'asfd9p8a7sdf90a8s76f9as',
+   nome: 'Luiz',
+   idade: 30,
+   sobrenome: 'Miranda',
 };
 
 function mapAccount(accountMongo: AccountMongo): AccountApi {
-  const { _id, ...accountData } = accountMongo;
-  return { ...accountData, id: _id };
+   const { _id, ...accountData } = accountMongo;
+   return { ...accountData, id: _id };
 }
 
 const accountApi = mapAccount(accountMongo);

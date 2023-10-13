@@ -1,40 +1,40 @@
 export abstract class Personagem {
-  protected abstract emoji: string;
+   protected abstract emoji: string;
 
-  constructor(
-    protected nome: string,
-    protected ataque: number,
-    protected vida: number,
-  ) {}
+   constructor(
+      protected nome: string,
+      protected ataque: number,
+      protected vida: number,
+   ) {}
 
-  atacar(personagem: Personagem): void {
-    this.bordao();
-    personagem.perderVida(this.ataque);
-  }
+   atacar(personagem: Personagem): void {
+      this.bordao();
+      personagem.perderVida(this.ataque);
+   }
 
-  perderVida(forcaAtaque: number): void {
-    this.vida -= forcaAtaque;
-    console.log(
-      `${this.emoji} - ${this.nome} agora tem ${this.vida} de vida...`,
-    );
-  }
+   perderVida(forcaAtaque: number): void {
+      this.vida -= forcaAtaque;
+      console.log(
+         `${this.emoji} - ${this.nome} agora tem ${this.vida} de vida...`,
+      );
+   }
 
-  abstract bordao(): void;
+   abstract bordao(): void;
 }
 
 export class Guerreira extends Personagem {
-  protected emoji = '\u{1F9DD}';
+   protected emoji = '\u{1F9DD}';
 
-  bordao(): void {
-    console.log(this.emoji + ' GUERREIRAAAAAA AOOOOOO ATAAAQUEEE!!');
-  }
+   bordao(): void {
+      console.log(this.emoji + ' GUERREIRAAAAAA AOOOOOO ATAAAQUEEE!!');
+   }
 }
 export class Monstro extends Personagem {
-  protected emoji = '\u{1F9DF}';
+   protected emoji = '\u{1F9DF}';
 
-  bordao(): void {
-    console.log(this.emoji + ' MONNNNNNNNNNNSSSTERRRRRRRRRRRRRR!!!!');
-  }
+   bordao(): void {
+      console.log(this.emoji + ' MONNNNNNNNNNNSSSTERRRRRRRRRRRRRR!!!!');
+   }
 }
 
 const guerreira = new Guerreira('Guereira', 100, 1000);
