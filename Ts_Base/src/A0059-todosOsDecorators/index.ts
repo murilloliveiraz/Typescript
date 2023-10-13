@@ -15,7 +15,7 @@ function decoradorDeClasse(construtor: Constructor): any {
 }
 
 // Método de instância (normal)
-function decoradorDeMetodo(
+function decoradorDeMetodo( 
   prototipoDaClasse: any,
   nomeDoMetodo: string,
   descritorDePropriedade: PropertyDescriptor,

@@ -17,7 +17,7 @@ export class UmaPessoa {
   constructor(
     @decorador nome: string,
     @decorador sobrenome: string,
-    @decorador idade: number,
+    idade: number,
   ) {
     this.nome = nome;
     this.sobrenome = sobrenome;
